@@ -1,12 +1,16 @@
 {% extends "blogpostapp/base.html" %}
 {% block content %}
+
 <div class="post-entry">
+	<h3><a href="{% url 'post_new' %}">Create new Post</a></h3>
 	{% for post in post_list %}
 
 		<h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
 		<p>{{ post.body }}</p>
 
 	{% endfor %}
+
+
 </div>
 
 

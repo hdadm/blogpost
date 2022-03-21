@@ -1,7 +1,35 @@
 {% extends "blogpostapp/base.html" %}
-{% block content %}
-<div class="post-entry">
-	<h2>{{ post.title }}</h2>
-	<p>{{ post.body }}</p>
-</div>
+ {% block content %}
+ <style>
+	table, th, td {
+	  border:1px solid black;
+	  border-collapse: collapse;
+
+	}
+	th, td {
+  padding :10px
+}
+</style>
+ <table>
+ 	<tr>
+ 		<th>Post title</th>
+ 		<th>Post body</th>
+ 		<th>Post Author</th>
+ 		<th>Edit the post</th>
+ 		<th>Delete post</th>
+ 		
+ 	</tr>
+ 	<tr>
+ 		
+ 		
+ 		<td>{{ post.title }}</td>
+ 		<td>{{ post.body }}</td>
+ 		<td>{{ post.author }}</td>
+ 		<td><a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a></td>
+ 		<td><a href="{% url 'post_delete' post.pk %}">+ Delete Blog Post</a></td>
+ 		
+
+ 	</tr>
+
+ </table> 
 {% endblock content %}
